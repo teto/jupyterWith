@@ -9,4 +9,5 @@
   ansibleKernel = callPackage ./ansible-kernel;
   xeusCling = callPackage ./xeus-cling;
   iJavascript = callPackage ./ijavascript;
+  elmKernel = callPackage ./elm;
 }
