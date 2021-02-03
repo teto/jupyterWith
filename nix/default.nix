@@ -1,10 +1,10 @@
-{ config ? { }, overlays ? [ ] }:
+nixpkgsArgs:
 
 let
   defaultOverlays = [
     (import ./haskell-overlay.nix)
     (import ./python-overlay.nix)
   ];
-  overlaysAll = defaultOverlays ++ overlays;
+  overlaysAll = defaultOverlays ++ (nixpkgsArgs.overlays or []);
 in
-import ./nixpkgs.nix { config = { allowUnsupportedSystem = true; }; overlays = overlaysAll; }
+  import ./nixpkgs.nix (nixpkgsArgs // { overlays=overlaysAll; })
