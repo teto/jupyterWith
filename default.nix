@@ -88,6 +88,7 @@ let
       });
 in
   { inherit
+      pkgs
       jupyterlabWith
       kernels
       mkBuildExtension
