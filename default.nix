@@ -1,6 +1,7 @@
 { overlays ? []
 , config ? {}
-, pkgs ? import ./nix { inherit config overlays; }
+, system
+, pkgs ? import ./nix { inherit system config overlays; }
 }:
 
 with (import ./lib/directory.nix { inherit pkgs; });
