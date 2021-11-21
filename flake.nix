@@ -28,7 +28,7 @@
             overlays = nixpkgs.lib.attrValues self.overlays;
               # [ self.overlays.jupyterWith ];
           };
-        ihaskellOverlay = ihaskell.packages.${system}.ihaskellEnv.ihaskellOverlay;
+        ihaskellOverlay = ihaskell.packages.${system}.ihaskell-env.ihaskellOverlay;
 
       in
       {
@@ -82,7 +82,7 @@
             overrides =
               prev.lib.composeExtensions
                 (old.overrides or (_: _: {}))
-                ihaskell.packages."${prev.system}".ihaskellEnv.ihaskellOverlay;
+                ihaskell.packages."${prev.system}".ihaskell-env.ihaskellOverlay;
               });
         };
 
