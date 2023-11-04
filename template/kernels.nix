@@ -2,4 +2,5 @@
   kernel.python.minimal = {
     enable = true;
   };
+
 }
